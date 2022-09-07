@@ -25,3 +25,8 @@ steps:
     targetPath: '$(Pipeline.Workspace)'
     artifact: 'packaged-node-demo-app'
     publishLocation: 'pipeline'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-*.xml'
